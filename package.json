@@ -1,6 +1,6 @@
 {
   "name": "@rosmarinus/create-release",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "create-release github actions",
   "main": "dist/index.cjs",
   "private": true,
