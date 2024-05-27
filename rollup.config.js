@@ -11,7 +11,7 @@ function getConfig(format, banner = undefined) {
   return defineConfig({
     input: 'src/index.ts',
     output: {
-      file: `dist/${format}/index.js`,
+      file: 'dist/index.cjs',
       format,
       banner,
       sourcemap: true,
@@ -21,4 +21,4 @@ function getConfig(format, banner = undefined) {
   });
 }
 
-export default [getConfig('cjs'), getConfig('es')];
+export default [getConfig('cjs')];

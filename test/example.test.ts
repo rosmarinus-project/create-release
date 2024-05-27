@@ -1,3 +1,4 @@
+import * as path from 'path';
 import { describe, beforeEach, afterEach, test } from '@jest/globals';
 
 describe('样例', () => {
@@ -6,6 +7,6 @@ describe('样例', () => {
   afterEach(() => {});
 
   test('样例', () => {
-    console.log('hello test');
+    console.log(path.join('/root', ''));
   });
 });
