@@ -1,12 +1,17 @@
 import * as path from 'path';
-import { describe, beforeEach, afterEach, test } from '@jest/globals';
+import { describe, beforeEach, afterEach, test, expect } from '@jest/globals';
+import semver from 'semver';
 
-describe('样例', () => {
+describe('third', () => {
   beforeEach(() => {});
 
   afterEach(() => {});
 
-  test('样例', () => {
-    console.log(path.join('/root', ''));
+  test('path', () => {
+    expect(path.join('/root', '')).toBe('/root');
+  });
+  test('semver', () => {
+    expect(semver.valid('1.10.15')).toBe('1.10.15');
+    expect(semver.valid('v1.10.15')).toBe('1.10.15');
   });
 });
