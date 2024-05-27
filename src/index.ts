@@ -1,6 +1,7 @@
 import * as path from 'path';
 import core from '@actions/core';
 import { getOctokit, context } from '@actions/github';
+import { createTokenAuth } from '@octokit/auth-token';
 import semver from 'semver';
 import * as fse from 'fs-extra';
 
@@ -41,7 +42,8 @@ async function getAllPkgJsonInfo(root: string, relativePath?: string): Promise<P
 
 async function run() {
   try {
-    const github = getOctokit(process.env.GITHUB_TOKEN || '');
+    const { token, tokenType } = await createTokenAuth(process.env.GITHUB_TOKEN || '')();
+    const github = getOctokit(token, { auth: tokenType });
 
     const { owner, repo } = context.repo;
 
